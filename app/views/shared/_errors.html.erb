@@ -1,0 +1,12 @@
+<% if object.errors.any? %>
+<section id="errors">
+  <div class="alert alert-danger" role="alert">
+    <strong>Oops! The <%= object.class.name.titleize.downcase %> could not be saved. </strong>
+    <ul>
+      <% object.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>    
+    </ul>
+  </div>
+</section>
+<% end %>

@@ -1,0 +1,55 @@
+<article class="movie">
+<%= image_for(@movie) %>
+  <header>
+    <h1><%= @movie.title %></h1>    
+    
+  </header>
+ 
+  <p>
+    <%= @movie.description %>
+  </p>
+
+   <h3>Rating</h3>
+  <p>
+    <%= @movie.rating %>
+  </p>
+  <h3>Released On</h3>
+  <p>
+    <%= @movie.released_on %>
+  </p>
+  <h3>Total Gross</h3>
+  <p>
+    <%= format_total_gross(@movie) %>
+  </p>
+  <h3>Cast</h3>
+<p>
+  <%= @movie.cast %>
+</p>
+
+<h3>Director</h3>
+<p>
+  <%= @movie.director %>
+</p>
+
+<h3>Duration</h3>
+<p>
+  <%= @movie.duration %>
+</p>
+<div>
+      <%= link_to 'Edit', edit_movie_path(@movie) %> |
+      <%= link_to 'Delete', @movie, method: :delete, data: {confirm: 'Are you sure?'} %>
+    </div>
+<hr></hr>
+
+<h3>
+  <%= format_average_stars(@movie) %>
+  <%= format_review(@movie) %> 
+</h3>
+<div class="review-form">
+  <%= render 'reviews/new' %>
+</div>
+<div class="review-list">
+  <%= render 'reviews/index' %>
+</div>
+</article>
+  

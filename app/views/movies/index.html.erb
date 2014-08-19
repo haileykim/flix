@@ -1,0 +1,37 @@
+<h2><%= pluralize(@movies.size, 'Movie') %> Found!</h2>
+<hr></hr>
+
+<% @movies.each do |movie| %>
+  <article class="movies">
+    <header>
+       <%= image_for(movie) %>
+      <h3><%= link_to movie.title, movie %></h3>
+      <h4>
+        <%= format_average_stars(movie) %> 
+        <%= format_review(movie) %> </h4>
+    </header>
+    <p>
+      <%= truncate(movie.description, length: 300, separator: " ") %>
+    </p>
+
+    <table>
+      <tr>
+        <th>Released:</th>
+        <td><%= movie.released_on %></td>
+      </tr>
+      <tr>
+        <th>Rating:</th>
+        <td><%= movie.rating %></td>
+      </tr>
+      <tr>
+        <th>Duration:</th>
+        <td><%= movie.duration %></td>
+      </tr>
+      <tr>
+        <th>Total Gross:</th>
+        <td><%= format_total_gross(movie) %></td>
+      </tr>
+    </table>
+    <hr></hr>
+  </article>
+<% end %>

@@ -1,0 +1,15 @@
+  <% @reviews.each do |review| %>
+    <div>
+      <p>
+        <%= pluralize(review.stars, 'star') %> by 
+        <strong><%= review.name %></strong>
+        (<%= time_ago_in_words(review.created_at) %> )
+        <%= link_to 'Edit', edit_movie_review_path(@movie, review) %> |         
+        <%= link_to 'Delete', movie_review_path(@movie, review), method: :delete, confirm: 'Are you sure?' %>
+      </p>
+      <p>
+        "<%= review.comment %>"
+      </p>
+      <hr></hr>
+    </div>
+  <% end %>
