@@ -26,7 +26,7 @@ module MoviesHelper
   
   def format_review(movie)
     if movie.reviews.any?
-      '|' + pluralize(movie.reviews.count, 'review')
+      '| ' + pluralize(movie.reviews.count, 'review')
     else
       nil     
     end
