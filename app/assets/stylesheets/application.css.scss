@@ -37,7 +37,7 @@ article.movie {
 .form-container {
 	width: 650px;
 	.short {
-		width: 300px;
+		max-width: 300px;
 	}	
 }
 
@@ -50,7 +50,7 @@ article.movie {
   background-color: #F0F0F0;
   padding: 20px;
   border-radius: 10px;
-  width: 700px;
+  max-width: 700px;
   margin-bottom: 20px;
 }
 
