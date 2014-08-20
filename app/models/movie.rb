@@ -3,11 +3,11 @@ class Movie < ActiveRecord::Base
   has_attached_file :image
 
   validates :title, :released_on, :duration, presence: true
-  validates :description, length: { minimum: 25 }
+  validates :description, length: { minimum: 5 }
   validates :total_gross, numericality: { greater_than_or_equal_to: 0 }
   validates_attachment :image, 
   :content_type => { :content_type => ['image/jpeg', 'image.png'] },
-  :size => { :less_than => 1.megabyte }
+  :size => { :less_than => 5.megabyte }
 
   
   RATINGS = %w(G PG PG-13 R NC-17)
