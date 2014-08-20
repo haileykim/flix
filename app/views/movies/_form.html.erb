@@ -34,10 +34,12 @@
   		<%= f.text_field :duration, class: 'form-control' %>
 	</div>
 	<div class = "form-group short">
-  		<%= f.label :image_file_name %><br/>
-  		<%= f.text_field :image_file_name, placeholder: 'GIF, JPG, PNG Only', class: 'form-control'  %>
+  		<%= f.label :image %><br/>
+  		<%= f.file_field :image, class: 'form-control'  %>
 	</div>
-
+	<div>
+		<%= image_for(@movie) %>
+	</div>
 	<%= f.submit 'Create Movie', class: 'btn btn-lg btn-primary' %>
 <% end %>
 </div>
